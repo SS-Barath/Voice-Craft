@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Craft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="entry-page" class="app-container">
+            <h1 class="main-heading">Voice Craft</h1>
+            <div class="options-container">
+                <button class="entry-btn" onclick="showPage('text-to-speech')">Text to Speech Converter</button>
+                <button class="entry-btn" onclick="showPage('speech-to-text')">Speech to Text Converter</button>
+            </div>
+        </div>
+        <div id="text-to-speech" class="app-container" style="display: none;">
+            <div class="headings-container">
+                <h1>Text to Speech Converter</h1>
+                <h3>Enter Text and Convert into Speech</h3>
+            </div>
+            <div class="interaction-container">
+                <textarea id="textToConvert" placeholder="Enter text to convert into speech..." cols="35" rows="10" class="text-control"></textarea>
+                <select id="voiceSelect" class="voice-control">
+                    <option value="">Select Voice</option>
+                </select>
+                <p class="error-para"></p>
+                <button class="btn" id="convertBtn">Listen</button>
+                <div style="margin-top: 1cm;"></div>
+                <button class="btn" onclick="showPage('entry-page')">Back</button>
+            </div>
+        </div>
+        <div id="speech-to-text" class="app-container" style="display: none;">
+            <div class="headings-container">
+                <h1>Speech to Text Converter</h1>
+                <h3>Speak and Convert into Text</h3>
+            </div>
+            <div class="interaction-container">
+                <button class="btn" id="startBtn">Start Recording</button>
+                <div style="margin-bottom: 1cm;"></div>
+                <button class="btn" id="stopBtn">Stop Recording</button>
+                <textarea id="textOutput" placeholder="Speech will be converted to text here..." cols="35" rows="10" class="text-control" readonly></textarea>
+                <button class="btn" onclick="showPage('entry-page')">Back</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
